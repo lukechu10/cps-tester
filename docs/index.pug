@@ -1,0 +1,21 @@
+doctype html
+html
+	head
+		title CPS Tester Online
+		link(rel='stylesheet', type='text/css', href='semantic/dist/semantic.min.css')
+		link(rel='stylesheet', type='text/css', href="style.css")
+		script(src='https://code.jquery.com/jquery-3.4.1.min.js')
+		script(src='semantic/dist/semantic.min.js')
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js")
+		script(src="cps.js")
+		script(src="chart-controller.js")
+body
+	.ui.container
+		h1 CPS Tester
+		button.ui.negative.button.fluid#rightClickToggle Enable Right Click
+		br
+		span Number of Clicks: #[span#clickNumber(style='font-weight: bold;') 0]
+		span(style='float: right;') CPS: #[span#cpsNumber(style='font-weight: bold') 0]
+
+		button.ui.button.fluid#cpsButton Click me
+		canvas#chart
