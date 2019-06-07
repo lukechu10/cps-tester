@@ -1,3 +1,5 @@
+var rightClick = false;
+
 $(() => {
 	$("#cpsButton").click(() => {
 		addClick();
@@ -5,15 +7,27 @@ $(() => {
 
 	// right click
 	$("#cpsButton").contextmenu(() => {
-		addClick();
-		return false;
+		if(rightClick) {
+			addClick();
+			return false;
+		}
+		return true;
 	});
 
 
 	// right click button
-	$("#rightClickToggle").click(() => [
+	$("#rightClickToggle").click(() => {
+		$("#rightClickToggle").toggleClass("positive");
+		$("#rightClickToggle").toggleClass("negative");
+		rightClick = !rightClick;
 
-	])
+		if(rightClick) {
+			$("#rightClickToggle").html("Disable Right Click");
+		}
+		else {
+			$("#rightClickToggle").html("Enable Right Click");
+		}
+	});
 });
 
 var clicks = 0;

@@ -1,5 +1,5 @@
 image:
   file: Dockerfile
 tasks:
-- command: npm i -g pug-cli && npm i -g nodemon && nodemon -e pug --exec "pug ./docs"\
+- command: npm i -g pug-cli && npm i -g nodemon && nodemon -e pug --exec "pug ./docs"
 - command: nodemon --ignore ./docs

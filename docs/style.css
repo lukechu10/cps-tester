@@ -1,3 +1,7 @@
 #cpsButton {
-	height: 100px;
+	height: 150px;
+}
+
+button.ui.button.fluid#rightClickToggle {
+	transition-duration: 250ms;
 }
